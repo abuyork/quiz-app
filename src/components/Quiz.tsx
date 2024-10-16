@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Clock, ArrowRight, ArrowLeft, Home, CheckCircle } from 'lucide-react'
+import { Clock, ArrowRight, Home, CheckCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import questions from '../data/questions'
 import { CoolMode } from './ui/cool-mode'
@@ -14,7 +14,7 @@ const Quiz: React.FC<QuizProps> = ({ onEndQuiz, onHome }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [score, setScore] = useState(0)
-  const [timeLeft, setTimeLeft] = useState(30)
+  const [timeLeft, setTimeLeft] = useState(240)
 
   useEffect(() => {
     if (timeLeft > 0) {
@@ -39,24 +39,10 @@ const Quiz: React.FC<QuizProps> = ({ onEndQuiz, onHome }) => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1)
       setSelectedAnswer(null)
-      setTimeLeft(30)
-    }
-  }
-
-  const handleFinish = () => {
-    if (selectedAnswer) {
-      if (selectedAnswer === questions[currentQuestion].correctAnswer) {
-        setScore(score + 1)
-      }
-    }
-    onEndQuiz(score)
-  }
-
-  const handlePrevious = () => {
-    if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1)
-      setSelectedAnswer(null)
-      setTimeLeft(30)
+      setTimeLeft(240)
+    } else {
+      // This is the last question, end the quiz
+      onEndQuiz(score + (selectedAnswer === questions[currentQuestion].correctAnswer ? 1 : 0))
     }
   }
 
@@ -71,7 +57,7 @@ const Quiz: React.FC<QuizProps> = ({ onEndQuiz, onHome }) => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-lg font-semibold text-gray-900">Question {currentQuestion + 1}/{questions.length}</span>
+          <span className="text-lg font-semibold text-gray-900">Savol {currentQuestion + 1}/{questions.length}</span>
           <span className="flex items-center text-lg font-semibold text-gray-900">
             <Clock className="mr-2 text-blue-300" />
             {timeLeft}s
@@ -122,30 +108,12 @@ const Quiz: React.FC<QuizProps> = ({ onEndQuiz, onHome }) => {
           </CoolMode>
           <div className="flex space-x-2 items-center">
             <ShinyButton
-              onClick={handlePrevious}
-              className={`bg-gray-300 hover:bg-gray-400 text-gray-800 text-xs ${currentQuestion === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
-            >
-              <span className="flex items-center">
-                <ArrowLeft className="mr-1" size={13} />
-                Prev
-              </span>
-            </ShinyButton>
-            <ShinyButton
               onClick={handleNext}
-              className="bg-gray-300 hover:bg-gray-400 text-gray-800 text-xs"
+              className={`${isLastQuestion ? 'bg-green-400 hover:bg-green-500' : 'bg-gray-300 hover:bg-gray-400'} text-gray-800 text-xs`}
             >
               <span className="flex items-center">
-                Next
-                <ArrowRight className="ml-1" size={13} />
-              </span>
-            </ShinyButton>
-            <ShinyButton
-              onClick={handleFinish}
-              className="bg-green-400 hover:bg-green-700 text-white text-xs"
-            >
-              <span className="flex items-center">
-                Finish
-                <CheckCircle className="ml-1" size={13} />
+                {isLastQuestion ? 'Finish' : 'Next'}
+                {isLastQuestion ? <CheckCircle className="ml-1" size={13} /> : <ArrowRight className="ml-1" size={13} />}
               </span>
             </ShinyButton>
           </div>
