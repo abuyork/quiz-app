@@ -55,21 +55,19 @@ const HomePage: React.FC<HomePageProps> = ({ onStartQuiz }) => {
           </motion.a>
         </CoolMode>
       </div>
-      <div className="flex flex-col md:flex-row justify-center gap-8 mt-8">
+      <div className="flex flex-col md:flex-row justify-center gap-6 mt-8">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <Card title="Qo'llanma" icon={<Info className="text-gray-600" />}>
-            <div className="text-center">
-              <ul className="list-disc list-inside text-xs inline-block text-left">
-                <li>15 ta Savolga Javob Bering</li>
-                <li>Savollar HTML , CSS bilimingizni aniqlab beradi </li>
-                <li>Har bir savolga 4 daqiqa ajratiladi</li>
-                <li>Natijangizni imtihon so'ngida bilib olishingiz mumkin</li>
-              </ul>
-            </div>
+          <Card title="Qo'llanma" icon={<Info className="text-gray-600" />} type="instructions">
+            <ul className="list-disc list-inside text-sm text-left">
+              <li>15 ta savolga javob bering</li>
+              <li>HTML, CSS bilimingiz aniqlanadi</li>
+              <li>Har savolga 4 daqiqa</li>
+              <li>Natija imtihon so'ngida</li>
+            </ul>
           </Card>
         </motion.div>
         <motion.div
@@ -77,11 +75,11 @@ const HomePage: React.FC<HomePageProps> = ({ onStartQuiz }) => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <Card title="Baholash Me'zoni" icon={<Trophy className="text-gray-600" />}>
-            <div className="text-center">
-              <p className="text-sm font-semibold mb-1">14-15 - A'lo</p>
-              <p className="text-sm font-semibold mb-1">11-13 - Yaxshi</p>
-              <p className="text-sm font-semibold">5-10 - Qoniqarsiz</p>
+          <Card title="Baholash Me'zoni" icon={<Trophy className="text-gray-600" />} type="criteria">
+            <div className="text-sm">
+              <p className="font-semibold mb-2">14-15 - A'lo</p>
+              <p className="font-semibold mb-2">11-13 - Yaxshi</p>
+              <p className="font-semibold">5-10 - Qoniqarsiz</p>
             </div>
           </Card>
         </motion.div>
