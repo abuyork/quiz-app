@@ -1,54 +1,78 @@
 const questions = [
   {
-    question: "What comes next in the sequence: 2, 4, 8, 16, ...?",
-    answers: ["24", "32", "64", "128"],
-    correctAnswer: "32"
+    question: "<strong> Tagining vazifasi nima? </strong>",
+    answers: ["Textni tagiga chiziq chizib beradi", "Textni hajmini 'o'lchamini' kattalashtirib beradi", "Textni ustiga chiziq tortib beradi", "Textni qalinlashtirib beradi"],
+    correctAnswer: "Textni qalinlashtirib beradi"
   },
   {
-    question: "If you rearrange the letters 'CIFAIPC' you would have the name of a(n):",
-    answers: ["City", "Animal", "Ocean", "Planet"],
-    correctAnswer: "Ocean"
+    question: "padding-left Nima vazifani bajaradi?",
+    answers: ["Elementni ichki chap tarafidan joy tashlaydi","Elementni tashqi chap tarafidan joy tashlaydi","Elementni ichki o'ng tarafidan joy tashlaydi","Elementni tashqi o'ng tarafidan joy tashlaydi"],
+    correctAnswer: "Elementni ichki chap tarafidan joy tashlaydi"
   },
   {
-    question: "Which number should come next in the pattern? 37, 34, 31, 28, ...",
-    answers: ["25", "26", "27", "24"],
-    correctAnswer: "25"
+    question: "HTML input typelarini belgilang?",
+    answers: ["text | button | checkbox","reset | day | week","url | get | password","date | email | year"],
+    correctAnswer: "text | button | checkbox"
   },
   {
-    question: "Complete the analogy: Book is to Reading as Fork is to:",
-    answers: ["Drawing", "Writing", "Eating", "Stirring"],
-    correctAnswer: "Eating"
+    question: "Padding qanday vazifani bajaradi ?",
+    answers: ["Elementning joylarini qisqartiradi", "Elementning tashqi tarafidan bo'sh joy tashlaydi", "Elementning ichki tarafidan bo'sh joy tashlaydi","Elementning ham ichki ham tashqi tarafidan bo'sh joy tashlaydi"],
+    correctAnswer: "Elementning ichki tarafidan bo'sh joy tashlaydi"
   },
   {
-    question: "Which figure completes the series?",
-    answers: ["Triangle", "Square", "Circle", "Pentagon"],
-    correctAnswer: "Circle"
+    question: "position:absolute Nima ?",
+    answers: ["Bitta pozitsiyadagi element", "Mutlaq pozitsiyaga ega bo'lgan", "Pozitsiyaga ega bo'lmagan element", "Yopishqoq element"],
+    correctAnswer: "Mutlaq pozitsiyaga ega bo'lgan"
   },
   {
-    question: "If all Zips are Zaps, and some Zaps are Zops, then:",
-    answers: ["All Zips are definitely Zops", "All Zops are definitely Zaps", "Some Zips might be Zops", "No Zips are Zops"],
-    correctAnswer: "Some Zips might be Zops"
+    question: "font-size Nima?",
+    answers: ["Matnlar orasidagi masofani belgilaydi", "Matn qalinligini belgilaydi", "Matn turini belgilaydi", "Matn hajmini (o'lchamini) belgilaydi"],
+    correctAnswer: "Matn hajmini (o'lchamini) belgilaydi"
   },
   {
-    question: "What number is one quarter of one tenth of 400?",
-    answers: ["40", "10", "4", "1"],
-    correctAnswer: "10"
+    question: "HTML input elementida ma'lumotni majburan kiritilishini taminlovchi attribute ?",
+    answers: ["disabled", "required", "selected", "Barchasi to'g'ri"],
+    correctAnswer: "required"
   },
   {
-    question: "Which word does NOT belong with the others?",
-    answers: ["Parrot", "Raven", "Penguin", "Sparrow"],
-    correctAnswer: "Penguin"
+    question: "Listlar qanday turga bo'linadi ?",
+    answers: ["Barchasi", "Description", "Unordered", "Ordered"],
+    correctAnswer: "Barchasi"
   },
   {
-    question: "If you have 10 apples and you give 2 to your friend, how many do you have left?",
-    answers: ["12", "10", "8", "6"],
-    correctAnswer: "8"
+    question: "margin-right Nima vazifani bajaradi?",
+    answers: ["Elementni ichki o'ng tarafidan joy tashlaydi", "Elementni tashqi o'ng tarafidan joy tashlaydi", "Elementni ichki tepa tarafidan joy tashlaydi", "Elementni tashqi tepa tarafidan joy tashlaydi"],
+    correctAnswer: "Elementni tashqi o'ng tarafidan joy tashlaydi"
   },
   {
-    question: "Complete the analogy: Pen is to Writer as Brush is to:",
-    answers: ["Artist", "Painter", "Canvas", "Color"],
-    correctAnswer: "Painter"
+    question: "margin Qanday vazifani bajaradi?",
+    answers: ["Elementning tashqi tarafidan bo'sh joy tashlaydi", "Elementning ham ichki ham tashqi tarafidan bo'sh joy tashlaydi", "Elementni joylarini qisqartiradi", "Elementning ichki tarafidan bo'sh joy tashlaydi"],
+    correctAnswer: "Elementning tashqi tarafidan bo'sh joy tashlaydi"
+  },
+  {
+    question: "CSS ni qanday yo'llar orqali projectimizda ishlatishimiz mumkin?",
+    answers: ["Internal", "Inline", "Barchasi", "External"],
+    correctAnswer: "Barchasi"
+  },
+  {
+    question: "<script> </script> Tagi nega kerak?",
+    answers: ["CSS codelarini html ichida ishlatish uchun", "Clean code uchun", "Javascript codelarni yozish uchun", "<script> Tagi mavjud emas"],
+    correctAnswer: "Javascript codelarni yozish uchun"
+  },
+  {
+    question: "class=“button1”, Bu yerda ' button1 ' nima deb ataladi?",
+    answers: ["id name", "attribute name", "tag name", "class name"],
+    correctAnswer: "class name"
+  },
+  {
+    question: "z-index Nima?",
+    answers: ["Elementni block elementga aylantiradi", "Elementni yashirib qo'yadi", "Elementni sahifani xohlagan joyida chiqarishini belgilaydi", "Elementni stack tartibini belgilaydi"],
+    correctAnswer: "Elementni stack tartibini belgilaydi"
+  },
+  {
+    question: "flex-direction: row; Bo'lganda justify-content qanday holatda ishini bajaradi?",
+    answers: ["Vertical", "Horizontal", "Diagonal", "To'g'ri javob yo'q"],
+    correctAnswer: "Horizontal"
   }
-]
-
+  ]
 export default questions

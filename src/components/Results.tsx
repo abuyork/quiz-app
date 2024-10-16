@@ -11,7 +11,7 @@ interface ResultsProps {
 }
 
 const Results: React.FC<ResultsProps> = ({ score, onRetry, onHome }) => {
-  const totalQuestions = 10
+  const totalQuestions = 15
   const percentage = (score / totalQuestions) * 100
   const iqEstimate = Math.round(80 + (score / totalQuestions) * 40)
   const confettiRef = useRef<ConfettiRef>(null)
@@ -35,7 +35,7 @@ const Results: React.FC<ResultsProps> = ({ score, onRetry, onHome }) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        Quiz Results
+        Natija
       </motion.h2>
       <motion.div
         className="bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm p-6 rounded-lg shadow-xl mb-6"
@@ -51,32 +51,32 @@ const Results: React.FC<ResultsProps> = ({ score, onRetry, onHome }) => {
         >
           <Award />
         </motion.div>
-        <p className="text-2xl mb-2">Your Score: {score}/{totalQuestions}</p>
-        <p className="text-xl mb-4">Percentage: {percentage.toFixed(1)}%</p>
-        <p className="text-3xl font-semibold mb-2">Estimated IQ: {iqEstimate}</p>
+        <p className="text-2xl mb-2">Sizni Natijangiz: {score}/{totalQuestions}</p>
+        <p className="text-xl mb-4">Foiz Miqdori: {percentage.toFixed(1)}%</p>
+        
         <p className="text-sm text-gray-300">
-          Note: This is a rough estimate and not a substitute for a professional IQ test.
+          Eslatma: Bu test sizni HTML va CSS bilimingizni ehtimoliy darjangizni aniqlab beradi.
         </p>
       </motion.div>
-      <div className="flex justify-center space-x-2">
-        <ShinyButton onClick={onRetry} className="bg-blue-300 text-white flex-1">
-          <span className="flex items-center justify-center">
-            <Repeat className="mr-1" size={14} />
+      <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-2">
+        <ShinyButton onClick={onRetry} className="bg-blue-300 text-white w-full sm:w-auto">
+          <span className="flex items-center justify-center text-sm">
+            <Repeat className="mr-1" size={16} />
             Retry
           </span>
         </ShinyButton>
-        <ShinyButton onClick={onHome} className="bg-gray-400 text-white flex-1">
-          <span className="flex items-center justify-center">
-            <Home className="mr-1" size={14} />
+        <ShinyButton onClick={onHome} className="bg-gray-400 text-white w-full sm:w-auto">
+          <span className="flex items-center justify-center text-sm">
+            <Home className="mr-1" size={16} />
             Home
           </span>
         </ShinyButton>
         <ShinyButton
-          onClick={() => alert('Sharing functionality coming soon!')}
-          className="bg-green-400 text-white flex-1"
+          onClick={() => alert('Ulashish funksiyasi tez orada!')}
+          className="bg-green-400 text-white w-full sm:w-auto"
         >
-          <span className="flex items-center justify-center">
-            <Share2 className="mr-1" size={14} />
+          <span className="flex items-center justify-center text-sm">
+            <Share2 className="mr-1" size={16} />
             Share
           </span>
         </ShinyButton>
