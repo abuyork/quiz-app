@@ -1,15 +1,20 @@
 {
+  "homepage": "https://abuyork.github.io/i-quiz/",
   "name": "vite-react-typescript-starter",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@clerk/clerk-react": "^5.11.1",
+    "@clerk/nextjs": "^5.7.3",
     "@types/canvas-confetti": "^1.6.4",
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
@@ -22,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
+    "@types/node": "^22.7.5",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
